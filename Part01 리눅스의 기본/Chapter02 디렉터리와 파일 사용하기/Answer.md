@@ -532,3 +532,9 @@ user2:x:1002:1002::/home/user2:/bin/bash
 ```
 
 24. cp의 실행 파일이 있는 위치를 검색하시오.
+```shell
+[root@linux1 ~]# which cp
+alias cp='cp -i'
+	/usr/bin/cp
+[root@linux1 ~]#
+```
