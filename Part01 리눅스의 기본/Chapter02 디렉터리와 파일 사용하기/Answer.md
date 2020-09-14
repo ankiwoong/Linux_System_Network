@@ -364,6 +364,10 @@ https://ko.wikipedia.org/wiki/%EC%95%84%EC%9D%B4%EB%85%B8%EB%93%9C
 [root@linux1 ch2]#
 ```
 
+---
+
+### 16 ~ 21번 문제 같은 조건
+
 16. 현재 디렉토리가 ch2일 때 다음 표의 빈칸을 채우시오.
 
 ```shell
@@ -463,9 +467,9 @@ test sample
 lib 디렉토리 : Library의 약자로, 각종 라이브러리가 저장되어있다. 라이브러리는 프로그래밍에서 함수같은 것이며, 커널 모듈도 이 곳에 위치한다.
 
 ```shell
-[root@linux1 ~]# cd /lib
+[root@linux1 ch2]# cd /usr/lib
 [root@linux1 lib]# pwd
-/lib
+/usr/lib
 [root@linux1 lib]# 
 ```
 
@@ -476,6 +480,8 @@ lib 디렉토리 : Library의 약자로, 각종 라이브러리가 저장되어�
 20. 현재 디렉토리에 data1 파일의 하드 링크를 data1-hard라는 이름으로 만드는 명령은 무엇인가?
 
 21. 현재 디렉토리에 ch2 디렉토리의 심볼릭 링크를 ch2-sym이라는 이름으로 만드는 명령은 무엇인가?
+
+---
 
 22. /etc/passwd 파일에서 문자열 'bash'가 들어 있는 행을 출력하시오.
 
