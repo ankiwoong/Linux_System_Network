@@ -524,5 +524,11 @@ user2:x:1002:1002::/home/user2:/bin/bash
 ```
 
 23. /etc 다렉토리 아래에 있는 passwd 파일의 경로를 찾으시오.
+```shell
+[root@linux1 ~]# find /etc -name passwd
+/etc/pam.d/passwd
+/etc/passwd
+[root@linux1 ~]# 
+```
 
 24. cp의 실행 파일이 있는 위치를 검색하시오.
