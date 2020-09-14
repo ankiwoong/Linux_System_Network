@@ -484,7 +484,6 @@ rmdir: failed to remove 'ch2': 디렉터리가 비어있지 않음
 ```
 
 19. pwd 명령을실행하니 현재 위치가 /home/user1/ch2였다. data1 파일의 내용을 행 번호를 붙여서 출력하는 명령은 무엇인가?
-
 ```shell
 [root@linux1 ch2]# cat -n ../ch3/data1
      1	data1 sample
@@ -492,6 +491,14 @@ rmdir: failed to remove 'ch2': 디렉터리가 비어있지 않음
 ```
 
 20. 현재 디렉토리에 data1 파일의 하드 링크를 data1-hard라는 이름으로 만드는 명령은 무엇인가?
+```shell
+[root@linux1 ch3]# ln data1 data1-hard
+[root@linux1 ch3]# ls -li
+합계 8
+50996282 -rw-r--r--. 2 root root 13  9월 14 14:54 data1
+50996282 -rw-r--r--. 2 root root 13  9월 14 14:54 data1-hard
+[root@linux1 ch3]#
+```
 
 21. 현재 디렉토리에 ch2 디렉토리의 심볼릭 링크를 ch2-sym이라는 이름으로 만드는 명령은 무엇인가?
 
