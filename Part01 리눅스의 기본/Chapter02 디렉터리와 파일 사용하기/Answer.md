@@ -514,6 +514,14 @@ rmdir: failed to remove 'ch2': 디렉터리가 비어있지 않음
 ---
 
 22. /etc/passwd 파일에서 문자열 'bash'가 들어 있는 행을 출력하시오.
+```shell
+[root@linux1 ~]# grep bash /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+student:x:1000:1000:student:/home/student:/bin/bash
+user1:x:1001:1001::/home/user1:/bin/bash
+user2:x:1002:1002::/home/user2:/bin/bash
+[root@linux1 ~]# 
+```
 
 23. /etc 다렉토리 아래에 있는 passwd 파일의 경로를 찾으시오.
 
