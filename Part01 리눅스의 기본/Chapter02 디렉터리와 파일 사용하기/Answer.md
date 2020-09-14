@@ -366,13 +366,97 @@ https://ko.wikipedia.org/wiki/%EC%95%84%EC%9D%B4%EB%85%B8%EB%93%9C
 
 16. 현재 디렉토리가 ch2일 때 다음 표의 빈칸을 채우시오.
 
+```shell
+/
+├── bin
+├── etc
+│     └── hosts
+├── usr
+│     ├── bin
+│     └── lib
+├── home
+│   └── user1
+│       ├── ch2
+│       │   └── test
+│       └── ch3
+│           └── data1
+└── tmp
+```
+
+```shell
+[root@linux1 ch2]# pwd
+/home/user1/ch2
+[root@linux1 ch2]#
+```
+
 |파일|절대 경로명|상대 경로명
 |---|---|---|
-|/|||
-|lib|||
-|data1|||
-|test|||
-|hosts|||
+|/|/|../../../|
+|lib|/usr/lib|../../../usr/lib|
+|data1|/home/user1/ch3/data1|../ch3/data1|
+|test|test(/home/user1/ch2/test)|test(../ch2/test)|
+|hosts|/etc/hosts|../../../etc/hosts|
+
+```shell
+[root@linux1 ch2]# cd /
+[root@linux1 /]# pwd
+/
+```
+
+```shell
+[root@linux1 ch2]# cd ../../../
+[root@linux1 /]# pwd
+/
+[root@linux1 /]# 
+```
+
+```shell
+[root@linux1 ch2]# cd /usr/lib
+[root@linux1 lib]# pwd
+/usr/lib
+[root@linux1 lib]#
+```
+
+```shell
+[root@linux1 ch2]# cd ../../../usr/lib
+[root@linux1 lib]# pwd
+/usr/lib
+[root@linux1 lib]#
+```
+
+```shell
+[root@linux1 ch2]# cat /home/user1/ch3/data1
+data1 sample
+[root@linux1 ch2]# 
+```
+
+```shell
+[root@linux1 ch2]# cat ../ch3/data1
+data1 sample
+[root@linux1 ch2]#
+```
+
+```shell
+[root@linux1 ch2]# cat test
+test sample
+[root@linux1 ch2]# 
+```
+
+```shell
+[root@linux1 ch3]# cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+172.25.3.11	www.example.com
+[root@linux1 ch3]# 
+```
+
+```shell
+[root@linux1 ch2]# cat ../../../etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+172.25.3.11	www.example.com
+[root@linux1 ch2]# 
+```
 
 17. 현재 디렉토리를 lib 디렉토리로 이동하는 명령은 무엇인가?
 
