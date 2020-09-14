@@ -107,6 +107,25 @@ data  data1  data1.ln  data1.sl@  temp/  test
 
 7. ls / 명령은 루트 디렉토리의 내용을 보여준다. 루트 디렉토리 자체의 정보를 확인하려면 어떻게 해야 하는가?
 
+```shell
+[root@linux1 ~]# ls /
+bin   dev  home  lib64  mnt  proc  run   srv  temp  tree   usr  work
+boot  etc  lib   media  opt  root  sbin  sys  tmp   user1  var
+[root@linux1 ~]# 
+```
+
+```shell
+[root@linux1 ~]# ls -d
+.
+[root@linux1 ~]# 
+```
+
+```shell
+[root@linux1 ~]# ls -ld
+dr-xr-x---. 21 root root 4096  9월 14 09:08 .
+[root@linux1 ~]# 
+```
+
 8.  절대 경로와 상대 경로를 정의하시오.
 
 9.  하드 링크와 심볼릭 링크, 복사 파일을 비교하여 설명하시오.
@@ -123,15 +142,15 @@ dr-xr-x---. 2 root root 4096  9월 14 09:08 ..
 [root@linux1 ~]#
 ```
 
-12. 심볼릭 링크 A의 원본 파일인 B를 삭제한 후 C 파일을 B로 복사했다. 심볼릭 링크 A의 내용을 출력했을 때 어느 파일의 내용이 출력되는가? 왜 그런지 설명하시오.
+1.  심볼릭 링크 A의 원본 파일인 B를 삭제한 후 C 파일을 B로 복사했다. 심볼릭 링크 A의 내용을 출력했을 때 어느 파일의 내용이 출력되는가? 왜 그런지 설명하시오.
 
-13. cp a.txt b.txt c.txt temp는 무엇을 실행하는 명령인가? 여기서 temp는 무엇이어야 하는가?
+2.  cp a.txt b.txt c.txt temp는 무엇을 실행하는 명령인가? 여기서 temp는 무엇이어야 하는가?
 
-14. inode에 대해 간단히 설명하시오.
+3.  inode에 대해 간단히 설명하시오.
 
-15. 파일명은 다른데 inode가 같다는 것은 무엇을 의미하는가?
+4.  파일명은 다른데 inode가 같다는 것은 무엇을 의미하는가?
 
-16. 현재 디렉토리가 ch2일 때 다음 표의 빈칸을 채우시오.
+5.  현재 디렉토리가 ch2일 때 다음 표의 빈칸을 채우시오.
 
 |파일|절대 경로명|상대 경로명
 |---|---|---|
