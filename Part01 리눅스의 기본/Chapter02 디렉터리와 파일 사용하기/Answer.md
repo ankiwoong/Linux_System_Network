@@ -174,8 +174,54 @@ dr-xr-x---. 21 root root 4096  9월 14 09:08 .
 ```
 
 10.   rmdir 명령과 rm -r 명령의 차이를 설명하시오.
+* rmdir
+  * 비어있는 디렉토리를 삭제
+  * 비어있지 않으면 삭제가 안된다.
+```shell
+[root@linux1 ch2]# tree test_d
+test_d
+├── a
+├── b
+└── c
 
-11.   temp 디렉토리를 생성한 후 ls -al 명령으로 temp 디렉토리의 내용을 확인했더니 다음과 같이 출력되었다. 현재 디렉토리(.)의 하드 링크 값이 2인 이유를 설명하시오.
+0 directories, 3 files
+[root@linux1 ch2]# rmdir test_d
+rmdir: failed to remove 'test_d': 디렉터리가 비어있지 않음
+[root@linux1 ch2]# 
+```
+
+* rm -r
+  * 비어있지 않은 디렉토리를 삭제
+```shell
+[root@linux1 ch2]# tree test_d
+test_d
+├── a
+├── b
+└── c
+
+0 directories, 3 files
+[root@linux1 ch2]# rm -r test_d
+rm: descend into directory 'test_d'? y
+rm: remove 일반 빈 파일 'test_d/a'? y
+rm: remove 일반 빈 파일 'test_d/b'? y
+rm: remove 일반 빈 파일 'test_d/c'? y
+rm: remove 디렉토리 'test_d'? y
+[root@linux1 ch2]# ll
+합계 692
+-rw-r--r--. 1 root root 692252  9월 13 17:32 data
+-rw-r--r--. 1 root root      0  9월 13 20:48 data1
+-rw-r--r--. 1 root root      0  9월 12 21:02 data1.ln
+lrwxrwxrwx. 1 root root      5  9월 13 12:28 data1.sl -> data1
+drwxr-xr-x. 2 root root     90  9월 13 20:38 temp
+-rw-r--r--. 2 root root     12  9월 14 12:36 test
+-rw-r--r--. 1 root root     12  9월 14 12:43 test_cpopy
+-rw-r--r--. 2 root root     12  9월 14 12:36 test_hard
+lrwxrwxrwx. 1 root root      4  9월 14 12:41 test_symbolic -> test
+[root@linux1 ch2]# 
+```
+
+
+11.    temp 디렉토리를 생성한 후 ls -al 명령으로 temp 디렉토리의 내용을 확인했더니 다음과 같이 출력되었다. 현재 디렉토리(.)의 하드 링크 값이 2인 이유를 설명하시오.
 
 ```shell
 [root@linux1 ~]# ls -al temp
@@ -185,15 +231,15 @@ dr-xr-x---. 2 root root 4096  9월 14 09:08 ..
 [root@linux1 ~]#
 ```
 
-12.  심볼릭 링크 A의 원본 파일인 B를 삭제한 후 C 파일을 B로 복사했다. 심볼릭 링크 A의 내용을 출력했을 때 어느 파일의 내용이 출력되는가? 왜 그런지 설명하시오.
+12.   심볼릭 링크 A의 원본 파일인 B를 삭제한 후 C 파일을 B로 복사했다. 심볼릭 링크 A의 내용을 출력했을 때 어느 파일의 내용이 출력되는가? 왜 그런지 설명하시오.
 
-13.  cp a.txt b.txt c.txt temp는 무엇을 실행하는 명령인가? 여기서 temp는 무엇이어야 하는가?
+13.   cp a.txt b.txt c.txt temp는 무엇을 실행하는 명령인가? 여기서 temp는 무엇이어야 하는가?
 
-14.  inode에 대해 간단히 설명하시오.
+14.   inode에 대해 간단히 설명하시오.
 
-15.  파일명은 다른데 inode가 같다는 것은 무엇을 의미하는가?
+15.   파일명은 다른데 inode가 같다는 것은 무엇을 의미하는가?
 
-16.  현재 디렉토리가 ch2일 때 다음 표의 빈칸을 채우시오.
+16.   현재 디렉토리가 ch2일 때 다음 표의 빈칸을 채우시오.
 
 |파일|절대 경로명|상대 경로명
 |---|---|---|
@@ -203,18 +249,18 @@ dr-xr-x---. 2 root root 4096  9월 14 09:08 ..
 |test|||
 |hosts|||
 
-17. 현재 디렉토리를 lib 디렉토리로 이동하는 명령은 무엇인가?
+17.  현재 디렉토리를 lib 디렉토리로 이동하는 명령은 무엇인가?
 
-18. rmdir 명령으로 ch2 디렉토리를 삭제하려고 한다. 삭제되는지 확인하고, 삭제되지 않으면 그 이유를 설명하시오.
+18.  rmdir 명령으로 ch2 디렉토리를 삭제하려고 한다. 삭제되는지 확인하고, 삭제되지 않으면 그 이유를 설명하시오.
 
-19. pwd 명령을실행하니 현재 위치가 /home/user1/ch2였다. data1 파일의 내용을 행 번호를 붙여서 출력하는 명령은 무엇인가?
+19.  pwd 명령을실행하니 현재 위치가 /home/user1/ch2였다. data1 파일의 내용을 행 번호를 붙여서 출력하는 명령은 무엇인가?
 
-20. 현재 디렉토리에 data1 파일의 하드 링크를 data1-hard라는 이름으로 만드는 명령은 무엇인가?
+20.  현재 디렉토리에 data1 파일의 하드 링크를 data1-hard라는 이름으로 만드는 명령은 무엇인가?
 
-21. 현재 디렉토리에 ch2 디렉토리의 심볼릭 링크를 ch2-sym이라는 이름으로 만드는 명령은 무엇인가?
+21.  현재 디렉토리에 ch2 디렉토리의 심볼릭 링크를 ch2-sym이라는 이름으로 만드는 명령은 무엇인가?
 
-22. /etc/passwd 파일에서 문자열 'bash'가 들어 있는 행을 출력하시오.
+22.  /etc/passwd 파일에서 문자열 'bash'가 들어 있는 행을 출력하시오.
 
-23. /etc 다렉토리 아래에 있는 passwd 파일의 경로를 찾으시오.
+23.  /etc 다렉토리 아래에 있는 passwd 파일의 경로를 찾으시오.
 
-24. cp의 실행 파일이 있는 위치를 검색하시오.
+24.  cp의 실행 파일이 있는 위치를 검색하시오.
