@@ -319,6 +319,38 @@ temp
 
 14. inode에 대해 간단히 설명하시오.
 
+정규 파일, 디렉터리 등 파일 시스템에 관한 정보를 가지고 있다.
+https://ko.wikipedia.org/wiki/%EC%95%84%EC%9D%B4%EB%85%B8%EB%93%9C
+
+```shell
+[root@linux1 ch2]# ls -i
+18111948 a      18111956 b.txt  18111958 data      18111957 data1.sl  18111960 test_cpopy
+18111951 a.txt  18111947 c      18111959 data1     18111939 temp      18124020 test_hard
+18111949 b      18111961 c.txt  18124025 data1.ln  18124020 test      18111955 test_symbolic
+[root@linux1 ch2]# 
+```
+
+```shell
+[root@linux1 ch2]# ls -li
+합계 688
+18111948 lrwxrwxrwx. 1 root root      1  9월 14 13:33 a -> b
+18111951 -rw-r--r--. 1 root root      0  9월 14 13:50 a.txt
+18111949 -rw-r--r--. 1 root root      0  9월 14 13:36 b
+18111956 -rw-r--r--. 1 root root      0  9월 14 13:50 b.txt
+18111947 -rw-r--r--. 1 root root     14  9월 14 13:34 c
+18111961 -rw-r--r--. 1 root root      0  9월 14 13:50 c.txt
+18111958 -rw-r--r--. 1 root root 692252  9월 13 17:32 data
+18111959 -rw-r--r--. 1 root root      0  9월 14 13:36 data1
+18124025 -rw-r--r--. 1 root root      0  9월 12 21:02 data1.ln
+18111957 lrwxrwxrwx. 1 root root      5  9월 13 12:28 data1.sl -> data1
+18111939 drwxr-xr-x. 2 root root     45  9월 14 13:50 temp
+18124020 -rw-r--r--. 2 root root      0  9월 14 13:36 test
+18111960 -rw-r--r--. 1 root root     12  9월 14 12:43 test_cpopy
+18124020 -rw-r--r--. 2 root root      0  9월 14 13:36 test_hard
+18111955 lrwxrwxrwx. 1 root root      4  9월 14 12:41 test_symbolic -> test
+[root@linux1 ch2]# 
+```
+
 15. 파일명은 다른데 inode가 같다는 것은 무엇을 의미하는가?
 
 16. 현재 디렉토리가 ch2일 때 다음 표의 빈칸을 채우시오.
