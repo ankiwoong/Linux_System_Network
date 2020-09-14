@@ -233,6 +233,66 @@ drwxr-xr-x. 3 root root 143  9월 14 13:01 ..
 
 12. 심볼릭 링크 A의 원본 파일인 B를 삭제한 후 C 파일을 B로 복사했다. 심볼릭 링크 A의 내용을 출력했을 때 어느 파일의 내용이 출력되는가? 왜 그런지 설명하시오.
 
+C 파일의 내용이 출력된다.
+
+```shell
+[root@linux1 ch2]# ln -s b a
+[root@linux1 ch2]# cat a
+Hello World
+[root@linux1 ch2]# ls -al
+합계 696
+drwxr-xr-x. 3 root root    161  9월 14 13:33 .
+drwxr-xr-x. 3 root root     17  9월  6 16:39 ..
+lrwxrwxrwx. 1 root root      1  9월 14 13:33 a -> b
+-rw-r--r--. 1 root root     12  9월 14 13:31 b
+-rw-r--r--. 1 root root 692252  9월 13 17:32 data
+-rw-r--r--. 1 root root      0  9월 13 20:48 data1
+-rw-r--r--. 1 root root      0  9월 12 21:02 data1.ln
+lrwxrwxrwx. 1 root root      5  9월 13 12:28 data1.sl -> data1
+drwxr-xr-x. 2 root root      6  9월 14 13:01 temp
+-rw-r--r--. 2 root root     12  9월 14 12:36 test
+-rw-r--r--. 1 root root     12  9월 14 12:43 test_cpopy
+-rw-r--r--. 2 root root     12  9월 14 12:36 test_hard
+lrwxrwxrwx. 1 root root      4  9월 14 12:41 test_symbolic -> test
+[root@linux1 ch2]# rm b
+rm: remove 일반 파일 'b'? y
+[root@linux1 ch2]# cat a
+cat: a: 그런 파일이나 디렉터리가 없습니다
+[root@linux1 ch2]# ls -al
+합계 692
+drwxr-xr-x. 3 root root    152  9월 14 13:33 .
+drwxr-xr-x. 3 root root     17  9월  6 16:39 ..
+lrwxrwxrwx. 1 root root      1  9월 14 13:33 a -> b
+-rw-r--r--. 1 root root 692252  9월 13 17:32 data
+-rw-r--r--. 1 root root      0  9월 13 20:48 data1
+-rw-r--r--. 1 root root      0  9월 12 21:02 data1.ln
+lrwxrwxrwx. 1 root root      5  9월 13 12:28 data1.sl -> data1
+drwxr-xr-x. 2 root root      6  9월 14 13:01 temp
+-rw-r--r--. 2 root root     12  9월 14 12:36 test
+-rw-r--r--. 1 root root     12  9월 14 12:43 test_cpopy
+-rw-r--r--. 2 root root     12  9월 14 12:36 test_hard
+lrwxrwxrwx. 1 root root      4  9월 14 12:41 test_symbolic -> test
+[root@linux1 ch2]# cat a
+Hello Wolrd 2
+[root@linux1 ch2]# ls -al
+합계 700
+drwxr-xr-x. 3 root root    170  9월 14 13:35 .
+drwxr-xr-x. 3 root root     17  9월  6 16:39 ..
+lrwxrwxrwx. 1 root root      1  9월 14 13:33 a -> b
+-rw-r--r--. 1 root root     14  9월 14 13:35 b
+-rw-r--r--. 1 root root     14  9월 14 13:34 c
+-rw-r--r--. 1 root root 692252  9월 13 17:32 data
+-rw-r--r--. 1 root root      0  9월 13 20:48 data1
+-rw-r--r--. 1 root root      0  9월 12 21:02 data1.ln
+lrwxrwxrwx. 1 root root      5  9월 13 12:28 data1.sl -> data1
+drwxr-xr-x. 2 root root      6  9월 14 13:01 temp
+-rw-r--r--. 2 root root     12  9월 14 12:36 test
+-rw-r--r--. 1 root root     12  9월 14 12:43 test_cpopy
+-rw-r--r--. 2 root root     12  9월 14 12:36 test_hard
+lrwxrwxrwx. 1 root root      4  9월 14 12:41 test_symbolic -> test
+[root@linux1 ch2]# [root@linux1 ch2]#
+```
+
 13. cp a.txt b.txt c.txt temp는 무엇을 실행하는 명령인가? 여기서 temp는 무엇이어야 하는가?
 
 14. inode에 대해 간단히 설명하시오.
