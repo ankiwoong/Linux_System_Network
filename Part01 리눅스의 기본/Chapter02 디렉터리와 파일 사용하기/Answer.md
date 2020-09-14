@@ -295,6 +295,28 @@ lrwxrwxrwx. 1 root root      4  9월 14 12:41 test_symbolic -> test
 
 13. cp a.txt b.txt c.txt temp는 무엇을 실행하는 명령인가? 여기서 temp는 무엇이어야 하는가?
 
+a.txt, b.txt, c.txt 파일을 temp로 복사한다. temp는 디렉토리이다.
+
+```shell
+[root@linux1 ch2]# touch a.txt
+[root@linux1 ch2]# touch b.txt
+[root@linux1 ch2]# touch c.txt
+[root@linux1 ch2]# 
+[root@linux1 ch2]# 
+[root@linux1 ch2]# 
+[root@linux1 ch2]# 
+[root@linux1 ch2]# 
+[root@linux1 ch2]# cp a.txt b.txt c.txt temp
+[root@linux1 ch2]# tree temp
+temp
+├── a.txt
+├── b.txt
+└── c.txt
+
+0 directories, 3 files
+[root@linux1 ch2]# 
+```
+
 14. inode에 대해 간단히 설명하시오.
 
 15. 파일명은 다른데 inode가 같다는 것은 무엇을 의미하는가?
