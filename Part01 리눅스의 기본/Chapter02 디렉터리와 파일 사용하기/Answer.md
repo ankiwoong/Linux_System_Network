@@ -86,15 +86,28 @@ err1.txt         file-16-18.txt  initial-setup-ks.cfg  temp/      tmp2/      다
 
 6. .(마침표)로 시작하는 파일은 무엇이며, 이 파일을 확인하려면 어떻게 해야 하는가?
 
+.(마침표)로 시작하는 파일 : 숨겨진 파일
+
+```shell
+[root@linux1 ~]# ls -a
+.              .bashrc    .lesshst  abc.txt          file1                 test1.txt  문서
+..             .cache     .local    anaconda-ks.cfg  file2                 tmp1       바탕화면
+.ICEauthority  .config    .pki      err1.txt         initial-setup-ks.cfg  tmp2       비디오
+.bash_history  .cshrc     .ssh      f1               linux_ex              user1      사진
+.bash_logout   .dbus      .tcshrc   file-16-16.txt   list0.txt             공개       서식
+.bash_profile  .esd_auth  .viminfo  file-16-18.txt   temp                  다운로드   음악
+[root@linux1 ~]# 
+```
+
 7. ls / 명령은 루트 디렉토리의 내용을 보여준다. 루트 디렉토리 자체의 정보를 확인하려면 어떻게 해야 하는가?
 
 8.  절대 경로와 상대 경로를 정의하시오.
 
 9.  하드 링크와 심볼릭 링크, 복사 파일을 비교하여 설명하시오.
 
-10. rmdir 명령과 rm -r 명령의 차이를 설명하시오.
+10.  rmdir 명령과 rm -r 명령의 차이를 설명하시오.
 
-11. temp 디렉토리를 생성한 후 ls -al 명령으로 temp 디렉토리의 내용을 확인했더니 다음과 같이 출력되었다. 현재 디렉토리(.)의 하드 링크 값이 2인 이유를 설명하시오.
+11.  temp 디렉토리를 생성한 후 ls -al 명령으로 temp 디렉토리의 내용을 확인했더니 다음과 같이 출력되었다. 현재 디렉토리(.)의 하드 링크 값이 2인 이유를 설명하시오.
 
 ```shell
 [root@linux1 ~]# ls -al temp
