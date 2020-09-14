@@ -63,6 +63,21 @@ useradd -m 계정명
 ```
 
 4. 파일의 종류를 구분하기 위해 ls 명령에 지정하는 옵션은 무엇인가?
+```shell
+[root@linux1 ~]# ls -F
+abc.txt          f1              file1                 linux_ex/  test1.txt  user1/     문서/      사진/
+anaconda-ks.cfg  file-16-16.txt  file2                 list0.txt  tmp1/      공개/      바탕화면/  서식/
+err1.txt         file-16-18.txt  initial-setup-ks.cfg  temp/      tmp2/      다운로드/  비디오/    음악/
+[root@linux1 ~]# 
+```
+
+|표시|의미|
+|---|---|
+||파일|
+|*|실행파일|
+|/|디렉토리|
+|=|소켓|
+|@|심볼릭 링크|
 
 5. ls 명령으로 파일의 종류를 구분하여 출력했더니 파일명 끝에 @이 추가되었다. 이것은 무엇을 의미하는가?
 
