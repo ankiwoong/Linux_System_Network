@@ -84,6 +84,12 @@ err1.txt         file-16-18.txt  initial-setup-ks.cfg  temp/      tmp2/      다
 심볼릭 링크 파일을 의미한다.
 윈도우의 바로가기처럼 원본 파일을 가리키는 파일을 의미한다.
 
+```shell
+[root@linux1 ch2]# ls -F
+data  data1  data1.ln  data1.sl@  temp/  test
+[root@linux1 ch2]#
+```
+
 6. .(마침표)로 시작하는 파일은 무엇이며, 이 파일을 확인하려면 어떻게 해야 하는가?
 
 .(마침표)로 시작하는 파일 : 숨겨진 파일
