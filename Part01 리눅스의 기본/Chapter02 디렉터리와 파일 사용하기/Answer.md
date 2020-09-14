@@ -501,6 +501,15 @@ rmdir: failed to remove 'ch2': 디렉터리가 비어있지 않음
 ```
 
 21. 현재 디렉토리에 ch2 디렉토리의 심볼릭 링크를 ch2-sym이라는 이름으로 만드는 명령은 무엇인가?
+```shell
+[root@linux1 ch3]# ln -s ch2 ch2-sym
+[root@linux1 ch3]# ls -li
+합계 8
+50996283 lrwxrwxrwx. 1 root root  3  9월 14 15:14 ch2-sym -> ch2
+50996282 -rw-r--r--. 2 root root 13  9월 14 14:54 data1
+50996282 -rw-r--r--. 2 root root 13  9월 14 14:54 data1-hard
+[root@linux1 ch3]# 
+```
 
 ---
 
