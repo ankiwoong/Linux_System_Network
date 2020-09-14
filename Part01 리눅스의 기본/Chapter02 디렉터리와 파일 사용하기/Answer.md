@@ -22,10 +22,46 @@ useradd -m 계정명
 |명령|의미|
 |---|---|
 |cd ..|부모 디렉토리로 이동한다.|
-|cd ../temp||
-|cd ~user2||
-|cd ~/temp||
-|cd /tmp||
+|cd ../temp|상위 디렉토리에 있는 temp 디렉토리로 이동한다.|
+|cd ~user2|	
+user2의 홈 디렉터리로 이동한다.|
+|cd ~/temp|자신의 홈 디렉터리에서 하위의 temp 디렉토리로 이동한다.|
+|cd /tmp|루트 디렉터리에 있는 tmp 디렉토리로 이동한다.|
+
+```shell
+[root@linux1 ~]# cd ..
+[root@linux1 /]# pwd
+/
+[root@linux1 /]#
+```
+
+```shell
+[root@linux1 /]# cd ../temp
+[root@linux1 temp]# pwd
+/temp
+[root@linux1 temp]# 
+```
+
+```shell
+[root@linux1 temp]# cd ~user2
+[root@linux1 user2]# pwd
+/home/user2
+[root@linux1 user2]# 
+```
+
+```shell
+[root@linux1 user2]# cd ~/temp
+[root@linux1 temp]# pwd
+/root/temp
+[root@linux1 temp]# 
+```
+
+```shell
+[root@linux1 temp]# cd /tmp
+[root@linux1 tmp]# pwd
+/tmp
+[root@linux1 tmp]# 
+```
 
 4. 파일의 종류를 구분하기 위해 ls 명령에 지정하는 옵션은 무엇인가?
 
