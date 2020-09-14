@@ -353,6 +353,17 @@ https://ko.wikipedia.org/wiki/%EC%95%84%EC%9D%B4%EB%85%B8%EB%93%9C
 
 15. 파일명은 다른데 inode가 같다는 것은 무엇을 의미하는가?
 
+하드링크로 생성 하면 inode 값이 같다. 결론은 같은 파일을 의미한다.
+
+```shell
+[root@linux1 ch2]# ln test.txt test_hard.txt
+[root@linux1 ch2]# ls -li
+합계 688
+18111965 -rw-r--r--. 2 root root      0  9월 14 13:56 test.txt
+18111965 -rw-r--r--. 2 root root      0  9월 14 13:56 test_hard.txt
+[root@linux1 ch2]#
+```
+
 16. 현재 디렉토리가 ch2일 때 다음 표의 빈칸을 채우시오.
 
 |파일|절대 경로명|상대 경로명
